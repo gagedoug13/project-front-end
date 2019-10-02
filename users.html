@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Welcome</title>
 </head>
 <body>
+        <form class="create-sighting" action="http://localhost:3000/sightings" method="POST">
+            <label for="user-dropdown">User</label>
+            <select name="user_id" id="user-dropdown"></select>
+            
+            <label for="animal-dropdown">Animal</label>
+            <select name="animal_id" id="animal-dropdown"></select>
+           
+            <label for="location-dropdown">Location</label>
+            <select name="location_id" id="location-dropdown"></select>
+           
+            <label for="story">Story</label>
+           <input type="text" name="story"/>
+            
+         
+
+
+               <input type="submit"/>  
+               
+               
+        </form>
+
     <script src="users.js"></script>
 </body>
 </html>
