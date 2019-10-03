@@ -5,12 +5,13 @@ function createCards(users){
     div.className = "cards"
 
     users.forEach(user => {
-        let a = document.createElement("a")
-        
-        a.href = `users.html?id=${user.id}`
-        a.innerText = `${user.name}\n`
+        let userName = document.createElement("a")
+        div.className="userName"
+        userName.href = `users.html?id=${user.id}`
+        userName.innerText = `${user.name}\n`
 
-        div.append(a)
+        div.append(userName)
+        div.append(userName)
     })
  body.append(div)
 

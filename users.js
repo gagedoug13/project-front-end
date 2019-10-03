@@ -2,14 +2,24 @@ let searchParams = new URLSearchParams(window.location.search)
 let query = searchParams.get("id")
 const body = document.body
 
-function createCard(user){
+function createCard(sightings){
    let div = document.createElement("div")
-   let a = document.createElement("a")
+   let userName = document.createElement("a")
+   let userSighting = document.createElement("p")
+   
+   sightings.forEach(sighting => {
+      if (sighting.user_id == query){
+         div.className = "cards"
+         userName.innerHTML = sighting.user.name
+         userSighting.innerHTML = sighting.animal.name
 
-   div.className = "cards"
-   a.href = `users.html?id=${user.id}`
-   a.innerText = `${user.name}`
-   div.append(a)
+      }
+   })
+   // sightings.filter(sighting => {
+
+   // })
+
+   div.append(userName, userSighting)
 
 body.appendChild(div)
 }
@@ -49,11 +59,14 @@ function createUserOption(users){
 }
 
 
-fetch (`http://localhost:3000/users/${query}`)
+// fetch (`http://localhost:3000/users/${query}`)
+//    .then(response => response.json())
+//    .then(createCard)
+
+   fetch(`http://localhost:3000/sightings`)
    .then(response => response.json())
    .then(createCard)
 
-   
 fetch(`http://localhost:3000/animals`)
    .then(response => response.json())
    .then(createAnimalOption)

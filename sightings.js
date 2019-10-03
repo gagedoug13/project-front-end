@@ -9,14 +9,14 @@ function createCard(sightings){
     sightings.forEach(sighting =>{
     let divCard = document.createElement("div")
     divCard.className = "eachSightingCard"
-   let p1 = document.createElement("p")
-   let p2 = document.createElement("p")
-   let p3 = document.createElement("p")
-   let p4 = document.createElement("p")
-   let photo = document.createElement("IMG")
 
+    let p1 = document.createElement("p")
+    let p2 = document.createElement("p")
+    let p3 = document.createElement("p")
+    let p4 = document.createElement("p")
+    let photo = document.createElement("IMG")
+    photo.className = "animalSightingPhotos"
 
-   console.log(sighting.user_id)
 
    p1.innerText = `${sighting.user.name} saw`
    p2.innerText = `the ${sighting.animal.name} at`
@@ -65,7 +65,7 @@ function createUserOption(users){
 }
 
 
-fetch (`http://localhost:3000/sightings`)
+fetch(`http://localhost:3000/sightings`)
    .then(response => response.json())
    .then(createCard)
 
