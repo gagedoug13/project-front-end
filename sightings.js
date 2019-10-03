@@ -1,17 +1,33 @@
-let searchParams = new URLSearchParams(window.location.search)
-let query = searchParams.get("id")
+// let searchParams = new URLSearchParams(window.location.search)
+// let query = searchParams.get("id")
 const body = document.body
 
-function createCard(user){
-   let div = document.createElement("div")
-   let a = document.createElement("a")
+function createCard(sightings){
+    let div = document.createElement("div")
+    div.className = "sightingCards"
 
-   div.className = "cards"
-   a.href = `users.html?id=${user.id}`
-   a.innerText = `${user.name}`
-   div.append(a)
+    sightings.forEach(sighting =>{
+    let divCard = document.createElement("div")
+    divCard.className = "eachSightingCard"
+   let p1 = document.createElement("p")
+   let p2 = document.createElement("p")
+   let p3 = document.createElement("p")
+   let p4 = document.createElement("p")
+   let photo = document.createElement("IMG")
 
-body.appendChild(div)
+
+   console.log(sighting.user_id)
+
+   p1.innerText = `${sighting.user.name} saw`
+   p2.innerText = `the ${sighting.animal.name} at`
+   p3.innerText = `${sighting.location.name}.`
+   p4.innerText = `\n Story Notes: ${sighting.story}`
+   photo.src = `${sighting.animal.image}`
+   
+   divCard.append(p1, p2, p3, p4, photo)
+   div.appendChild(divCard)
+    })
+   body.appendChild(div)
 }
 
 function createAnimalOption(animals){
@@ -49,7 +65,7 @@ function createUserOption(users){
 }
 
 
-fetch (`http://localhost:3000/users/${query}`)
+fetch (`http://localhost:3000/sightings`)
    .then(response => response.json())
    .then(createCard)
 

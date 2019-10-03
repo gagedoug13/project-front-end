@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome</title>
+</head>
+<body>
+        <header>
+
+                <img class= "logo" src="RedLine Sighting.png">
+        </header>
+        <form class="create-sighting" action="http://localhost:3000/sightings" method="POST">
+            <label for="user-dropdown">User</label>
+            <select name="user_id" id="user-dropdown"></select>
+            
+            <label for="animal-dropdown">Animal</label>
+            <select name="animal_id" id="animal-dropdown"></select>
+           
+            <label for="location-dropdown">Location</label>
+            <select name="location_id" id="location-dropdown"></select>
+           
+            <label for="story">Story</label>
+           <input type="text" name="story"/>
+            
+         
+
+
+               <input type="submit"/>  
+               
+               
+        </form>
+
+    <script src="sightings.js"></script>
+</body>
+</html>

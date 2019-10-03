@@ -129,7 +129,7 @@ label {
 
 body {
     background-image: url("https://www.johnfielder.com/wp-content/uploads/2015/09/1012-Needle-Mountains-Colorado.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: 100%;
     position: center;
 }
@@ -160,3 +160,28 @@ input [type=submit] {
 /* input [type=text] {
     font-size: 24px;
 } */
+
+.eachSightingCard {
+    background-color: #2e683b;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0px 10px 5px -6px black;
+    padding: 15px;
+    font-size: 25px;
+
+}
+
+.sightingCards {
+    display: grid;
+    /* grid-column-gap: 20px; */
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 50% 50% 50%;
+    grid-row-gap: 20px;
+    grid-column-gap: 30px;
+}
+
+img {
+    width: 70%;
+    height: 70%;
+    margin-top: 10px;
+}
