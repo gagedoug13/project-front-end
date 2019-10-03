@@ -1,27 +1,33 @@
-let searchParams = new URLSearchParams(window.location.search)
-let query = searchParams.get("id")
+// let searchParams = new URLSearchParams(window.location.search)
+// let query = searchParams.get("id")
 const body = document.body
 
 function createCard(sightings){
-   let div = document.createElement("div")
-   let userName = document.createElement("a")
-   let userSighting = document.createElement("p")
+    let div = document.createElement("div")
+    div.className = "sightingCards"
+
+    sightings.forEach(sighting =>{
+    let divCard = document.createElement("div")
+    divCard.className = "eachSightingCard"
+
+    let p1 = document.createElement("p")
+    let p2 = document.createElement("p")
+    let p3 = document.createElement("p")
+    let p4 = document.createElement("p")
+    let photo = document.createElement("IMG")
+    photo.className = "animalSightingPhotos"
+
+
+   p1.innerText = `${sighting.user.name} saw`
+   p2.innerText = `the ${sighting.animal.name} at`
+   p3.innerText = `${sighting.location.name}.`
+   p4.innerText = `\n Story Notes: ${sighting.story}`
+   photo.src = `${sighting.animal.image}`
    
-   sightings.forEach(sighting => {
-      if (sighting.user_id == query){
-         div.className = "cards"
-         userName.innerHTML = sighting.user.name
-         userSighting.innerHTML = sighting.animal.name
-
-      }
-   })
-   // sightings.filter(sighting => {
-
-   // })
-
-   div.append(userName, userSighting)
-
-body.appendChild(div)
+   divCard.append(p1, p2, p3, p4, photo)
+   div.appendChild(divCard)
+    })
+   body.appendChild(div)
 }
 
 function createAnimalOption(animals){
@@ -59,14 +65,11 @@ function createUserOption(users){
 }
 
 
-// fetch (`http://localhost:3000/users/${query}`)
-//    .then(response => response.json())
-//    .then(createCard)
-
-   fetch(`http://localhost:3000/sightings`)
+fetch(`http://localhost:3000/sightings`)
    .then(response => response.json())
    .then(createCard)
 
+   
 fetch(`http://localhost:3000/animals`)
    .then(response => response.json())
    .then(createAnimalOption)

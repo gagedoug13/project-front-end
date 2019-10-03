@@ -2,17 +2,16 @@ const body = document.body
 
 function createCards(users){
     let div = document.createElement("div")
-    div.classname = "cards"
+    div.className = "cards"
 
     users.forEach(user => {
-        let p = document.createElement("p")
-        let a = document.createElement("a")
+        let userName = document.createElement("a")
+        div.className="userName"
+        userName.href = `users.html?id=${user.id}`
+        userName.innerText = `${user.name}\n`
 
-        a.href = `users.html?id=${user.id}`
-        a.innerText = `${user.name}`
-
-
-        div.append(a)
+        div.append(userName)
+        div.append(userName)
     })
  body.append(div)
 
