@@ -4,22 +4,20 @@ const body = document.body
 
 function createCard(sightings){
    let div = document.createElement("div")
-   let userName = document.createElement("a")
-   let userSighting = document.createElement("p")
+  
    
    sightings.forEach(sighting => {
       if (sighting.user_id == query){
-         div.className = "cards"
-         userName.innerHTML = sighting.user.name
-         userSighting.innerHTML = sighting.animal.name
-
+         let userName = document.createElement("p")
+         let photo = document.createElement("IMG")
+          photo.className = "animalSightingPhotos"
+         div.className = "userSightingCards"
+         userName.innerHTML = `${sighting.user.name} saw a ${sighting.animal.name}`
+         photo.src = `\n${sighting.animal.image}`
+         div.append(userName, photo)
       }
    })
-   // sightings.filter(sighting => {
-
-   // })
-
-   div.append(userName, userSighting)
+   
 
 body.appendChild(div)
 }
@@ -62,10 +60,13 @@ function createUserOption(users){
 // fetch (`http://localhost:3000/users/${query}`)
 //    .then(response => response.json())
 //    .then(createCard)
-
+let allSightings = []
    fetch(`http://localhost:3000/sightings`)
    .then(response => response.json())
-   .then(createCard)
+   .then (sightingResponse => {
+      allSightings = sightingResponse
+      createCard(allSightings)
+   })
 
 fetch(`http://localhost:3000/animals`)
    .then(response => response.json())

@@ -16,8 +16,8 @@ function createCard(animals){
     photo.className = "animalPhotos"
 
 
-   p1.innerText = `${animal.name}`
-   p2.innerText = `${animal.description}`
+   p1.innerText = `${animal.name}\n`
+   p2.innerText = `\n${animal.description}`
    photo.src = `${animal.image}`
    
    divCard.append(p1, p2, photo)

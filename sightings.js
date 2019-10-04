@@ -18,8 +18,7 @@ function createCard(sightings){
     photo.className = "animalSightingPhotos"
 
 
-   p1.innerText = `${sighting.user.name} saw`
-   p2.innerText = `the ${sighting.animal.name} at`
+   p1.innerText = `${sighting.user.name} saw the ${sighting.animal.name} at`
    p3.innerText = `${sighting.location.name}.`
    p4.innerText = `\n Story Notes: ${sighting.story}`
    photo.src = `${sighting.animal.image}`
