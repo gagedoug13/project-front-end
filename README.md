@@ -24,7 +24,7 @@
 
 <h2>Set Up and Install Instructions</h2>
 <ol>
-<li>Clone both this code and our backendfrom our GitHub repository.</li>
+<li>Clone both this code and our backend from our GitHub repository.</li>
 <li>Bundle Install Gems.</li>
 <li>Seed your database with the rails db:seed command.</li>
 <li>Open the frontend and backend in separate terminals.</li>
