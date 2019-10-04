@@ -84,6 +84,7 @@ form input {
     border: 2px black solid;
     width: 180px;
     height: 50px;
+    font-size: 24px;
 }
 
 [type="submit"] {
@@ -92,6 +93,7 @@ form input {
     color: white;
     font-size: 25px;
     box-shadow: 0px 10px 5px -6px black;
+    text-transform: uppercase;
 }
 
  .cards {
@@ -158,6 +160,7 @@ body {
     /* background-repeat: repeat; */
     background-size: 100%;
     background-attachment: fixed;
+    margin-bottom: 80px;
 
 }
 
@@ -198,8 +201,8 @@ input [type=submit] {
     width: 550px;
     height: 440px;
     margin-top: 10px;
-    margin-bottom: 20px;
-    border-radius: 15px;
+    margin-bottom: 10px;
+    border-radius: 20px;
     margin-left: 30px;
 }
 
@@ -207,8 +210,7 @@ input [type=submit] {
     display: grid;
     /* grid-column-gap: 20px; */
     grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 50% 50% 50%;
-    /* grid-row-gap: 20px; */
+    /* grid-template-rows: 50% 50%; */
     /* grid-column-gap: 30px; */
 }
 
@@ -223,6 +225,7 @@ input [type=submit] {
     margin-top: 10px; 
     width: 70%;
     height: 70%;
+    border-radius: 20px;
 }
 
 .animalCards {
@@ -243,8 +246,10 @@ input [type=submit] {
     font-size: 25px;
     width: 550px;
     height: 540px;
-    margin-top: 10px;
+    margin-top: 25px;
     margin-bottom: 20px;
+    border-radius: 20px;
+    margin-left: 35px;
 }
 
 .animalPhotos {
@@ -253,8 +258,54 @@ input [type=submit] {
     width: 70%;
     height: 50%;
     float: left;
+    border-radius: 20px;
 }
 
 .logo-background {
     background: none;
+}
+
+.userSightingCards{
+    animation: color_change ease-in-out 3s infinite;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0px 10px 5px -6px black;
+    padding: 15px;
+    font-size: 25px;
+    width: 450px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+@keyframes color_change {
+	from { background: linear-gradient(to bottom,#4055a6, #052192); }
+	to { background: linear-gradient(to top, #052192, #4055a6 ); }
+}
+
+img.animalPhotos:hover {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+   }
+.otter:hover {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+   }
+
+.animalSightingPhotos:hover {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+   }
+
+.animalSightingPhotos {
+    margin-left: 20px;
+}
+
+.otter {
+    animation: movement 3s infinite alternate;
+}
+
+@keyframes movement {
+	from { transform: translate(843px) ; }
+	to { transform: translate(0px); }
 }
