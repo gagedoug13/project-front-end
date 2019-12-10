@@ -5,16 +5,14 @@ function createCard(animals){
     div.className = "animalCards"
 
     animals.forEach(animal =>{
+       
     let divCard = document.createElement("div")
     divCard.className = "eachAnimalCard"
 
     let p1 = document.createElement("p")
     let p2 = document.createElement("p")
-    let p3 = document.createElement("p")
-    let p4 = document.createElement("p")
     let photo = document.createElement("IMG")
     photo.className = "animalPhotos"
-
 
    p1.innerText = `${animal.name}\n`
    p2.innerText = `\n${animal.description}`
@@ -25,11 +23,6 @@ function createCard(animals){
     })
    body.appendChild(div)
 }
-
-
-
-
-
 
 fetch(`http://localhost:3000/animals`)
    .then(response => response.json())

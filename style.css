@@ -1,7 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -23,7 +19,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -60,9 +56,7 @@ header{
     display: flex;
     align-items: center;
     box-shadow: 0px 5px 5px 2px black;
-    
 }
-
 
 header a{
     background: #EC2F00;
@@ -76,8 +70,6 @@ header a{
 .logo {
     width: 400px;
     display: flex;
-
-    /* border: 2px black solid; */
 }
 
 form input {
@@ -96,23 +88,6 @@ form input {
     text-transform: uppercase;
 }
 
- .cards {
-    /* margin-left: 50px;
-    width: 20%;
-    display: flex;
-    column-gap: 30px;
-    justify-content: center;
-    padding: 5px;
-    margin-top: 5px;
-    background-color: #2e683b;
-    color: white;
-    text-decoration: none;
-    box-shadow: 0px 10px 5px -6px black;
-    padding: 15px;
-    font-size: 25px; */
-    
-}
-
 .userName a  {
     margin-left: 50px;
     width: 20%;
@@ -129,15 +104,11 @@ form input {
     font-size: 25px;
 }
 
-
-
 .left-front {
     width: 700px;
     margin-top: 100px;
     margin-left: 50px;
     height: 250px;
-
-
 }
 
 .create-user {
@@ -157,7 +128,6 @@ label {
 
 body {
     background: url("https://www.johnfielder.com/wp-content/uploads/2015/09/1012-Needle-Mountains-Colorado.jpg");
-    /* background-repeat: repeat; */
     background-size: 100%;
     background-attachment: fixed;
     margin-bottom: 80px;
@@ -178,7 +148,6 @@ input [type=submit] {
 }
 
 .otter {
-    /* border: 2px black solid; */
     float: right;
     margin-top: -170px;
 }
@@ -186,10 +155,6 @@ input [type=submit] {
 #user-dropdown, #animal-dropdown, #location-dropdown {
     font-size: 25px;
 } 
-
-/* input [type=text] {
-    font-size: 24px;
-} */
 
 .eachSightingCard {
     background-color: #2e683b;
@@ -208,17 +173,8 @@ input [type=submit] {
 
 .sightingCards {
     display: grid;
-    /* grid-column-gap: 20px; */
     grid-template-columns: 33% 33% 33%;
-    /* grid-template-rows: 50% 50%; */
-    /* grid-column-gap: 30px; */
 }
-
-/* img {
-    width: 70%;
-    height: 70%;
-    margin-top: 10px;
-} */
 
 .animalSightingPhotos {
     width: 70%;
@@ -230,11 +186,8 @@ input [type=submit] {
 
 .animalCards {
     display: grid;
-    /* grid-column-gap: 20px; */
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 650px 650px 650px 650px 650px 650px 650px 650px 650px 650px 650px 650px 650px 650px 650px 650px 650px 650px 650px 650px 650px 650px 650px ;
-    /* grid-row-gap: 20px; */
-    /* grid-column-gap: 30px; */
 }
 
 .eachAnimalCard {
@@ -308,4 +261,8 @@ img.animalPhotos:hover {
 @keyframes movement {
 	from { transform: translate(843px) ; }
 	to { transform: translate(0px); }
+}
+
+.background {
+    filter: invert(100%);
 }

@@ -5,7 +5,6 @@ const body = document.body
 function createCard(sightings){
    let div = document.createElement("div")
   
-   
    sightings.forEach(sighting => {
       if (sighting.user_id == query){
          let userName = document.createElement("p")
@@ -17,9 +16,9 @@ function createCard(sightings){
          div.append(userName, photo)
       }
    })
-   
 
 body.appendChild(div)
+
 }
 
 function createAnimalOption(animals){
@@ -29,9 +28,7 @@ function createAnimalOption(animals){
        option.innerText = animal.name
        option.value = animal.id
        animalDropdown.appendChild(option)
-
    })
-
 }
 
 function createLocationOption(locations){
@@ -41,9 +38,7 @@ function createLocationOption(locations){
        option.innerText = location.name
        option.value = location.id
        locationDropdown.appendChild(option)
-
    })
-
 }
 function createUserOption(users){
    let userDropdown = document.getElementById("user-dropdown")
@@ -53,13 +48,8 @@ function createUserOption(users){
        option.value = user.id
        userDropdown.appendChild(option)
    })
-
 }
 
-
-// fetch (`http://localhost:3000/users/${query}`)
-//    .then(response => response.json())
-//    .then(createCard)
 let allSightings = []
    fetch(`http://localhost:3000/sightings`)
    .then(response => response.json())

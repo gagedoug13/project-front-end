@@ -1,5 +1,3 @@
-// let searchParams = new URLSearchParams(window.location.search)
-// let query = searchParams.get("id")
 const body = document.body
 
 function createCard(sightings){
@@ -36,9 +34,7 @@ function createAnimalOption(animals){
        option.innerText = animal.name
        option.value = animal.id
        animalDropdown.appendChild(option)
-
    })
-
 }
 
 function createLocationOption(locations){
@@ -48,9 +44,7 @@ function createLocationOption(locations){
        option.innerText = location.name
        option.value = location.id
        locationDropdown.appendChild(option)
-
    })
-
 }
 function createUserOption(users){
    let userDropdown = document.getElementById("user-dropdown")
@@ -60,15 +54,12 @@ function createUserOption(users){
        option.value = user.id
        userDropdown.appendChild(option)
    })
-
 }
-
 
 fetch(`http://localhost:3000/sightings`)
    .then(response => response.json())
    .then(createCard)
-
-   
+ 
 fetch(`http://localhost:3000/animals`)
    .then(response => response.json())
    .then(createAnimalOption)
